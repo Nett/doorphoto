@@ -1,0 +1,103 @@
+<div>
+    <div style="text-align: center;">
+        <button ng-click="$ctrl.openUpload()" class="uploadPhoto"
+                style="position: relative; width: 230px; text-align: left; margin-bottom: 15px;">
+            {{$ctrl.uploadPhrase}}
+            <i style="font-size: 36px; position: absolute; top: 8px; right: 25px;" class="material-icons">photo_camera</i>
+        </button>
+        <div ng-if="$ctrl.photoLoadProgress">
+            <i class="fa fa-refresh fa-spin" style="font-size:48px"></i>
+        </div>
+        <i class="fa fa-refresh fa-spin" style="font-size:0px"></i>
+    </div>
+
+    <input style="display: none;" type="file" onchange="angular.element(this).scope().fileUpload(this)" ng-model="$ctrl.photo" id="selectPhoto" name="selectPhoto" />
+    <output style="display: none;" id="photoBox"></output>
+
+    <div id="svgRoot" style="text-align: center;"></div>
+    <ul id="catalogItemListMenu" style="width: 600px; min-height: 115px; margin-top: 0px;">
+        <li style="height: 50px;" ng-repeat="category in $ctrl.categories">
+            <div class="catalogItemListMenuLink" ng-click="$ctrl.selectCategory(category)">
+                <div class="categoryTitle" style="width: 125px;"
+                     ng-style="{'border-bottom': ($ctrl.currentCategoryId == category.categoryId) ? '3px solid #DE5328': 'none'}">
+                    <p>
+                        <span class="sample">Серия</span> {{category.name}}
+                    </p>
+                    <span>Моделей в серии: {{category.itemsNumber}}</span>
+                </div>
+            </div>
+        </li>
+    </ul>
+
+    <div style="height: 110px" ng-if="$ctrl.models.length">
+    <slick ng-if="$ctrl.dataLoaded" slides-to-show="6" infinite="false" slides-to-scroll="4">
+        <div style="height: 100px;" ng-repeat="color in $ctrl.colors">
+            <div style="text-align: center; margin: 0 1px; cursor: pointer;" ng-click="$ctrl.selectColor(color)">
+                <p style="margin-bottom: 3px;"
+                   ng-style="{
+                   'font-weight': ($ctrl.currentColorId == color.id) ? 'bold': 'normal',
+                   'color': ($ctrl.currentColorId == color.id) ? 'black' : '#666666'
+                   }"
+                >{{color.name}}</p>
+                <img ng-src="{{color.image}}" width="100%" style="margin: auto;">
+            </div>
+        </div>
+    </slick>
+    </div>
+
+    <div style="height: 280px" ng-if="$ctrl.models.length">
+    <slick ng-if="$ctrl.dataLoadedModels" slides-to-show="6" infinite="false" slides-to-scroll="4">
+        <div class="catalogItemList" style="height: 280px;" ng-repeat="model in $ctrl.models">
+            <div class="itemImage boxgrid captionfull"
+                 style="text-align: center;">
+                <p style="margin-bottom: 1px; font-weight: bold;">{{model.prefix}}-{{model.name}}</p>
+                <div style="position: relative; overflow: hidden; width: 125px; margin: 0 auto;">
+                    <div ng-if="model.categoryId !== '6' && model.categoryId !== '7'">
+                        <span class="newModelMarker" ng-if="model.new === '1'">{{$ctrl.newPhrase}}</span>
+                        <img class="modelPicture" ng-src="{{model.image}}" height="250px" width="125px" alt="" style="margin: auto;">
+                    </div>
+                    <div ng-if="model.categoryId === '6'"
+                         style="position: relative;">
+                        <img class="modelBox"
+                             ng-src="{{model.box}}"
+                             height="250px"
+                             width="125px" alt=""
+                             style="margin: auto;">
+                        <img class="modelPictureImage"
+                             ng-src="{{model.image}}"
+                             style="position: absolute; top: 29px; left: 20px; width: 85px; height: 212px;">
+                        <img class="modelPicture"
+                             ng-src="{{model.handle}}"
+                             style="position: absolute; top: 132px; left: 25px; width: 16px; height: 6px;">
+                    </div>
+                    <div ng-if="model.categoryId === '7'"
+                         style="position: relative;">
+                        <img class="modelBox"
+                             ng-src="{{model.box}}"
+                             height="250px"
+                             width="125px" alt=""
+                             style="margin: auto;">
+                        <img class="modelPictureImage"
+                             ng-src="{{model.image}}"
+                             style="position: absolute; top: 29px; left: 20px; width: 85px; height: 212px;">
+                        <img class="modelPictureHandle"
+                             ng-src="{{model.handle}}"
+                             style="position: absolute; top: 132px; left: 21px; width: 16px; height: 6px;">
+                        <img class="modelPictureHing"
+                             ng-src="{{model.hinge}}"
+                             style="position: absolute; top: 52px; left: 96px; width: 14px; height: 10px;">
+                        <img class="modelPictureHing"
+                             ng-src="{{model.hinge}}"
+                             style="position: absolute; top: 198px; left: 96px; width: 14px; height: 10px;">
+                    </div>
+                    <div class="cover boxcaption">
+                             <span class="roomModel" ng-click="$ctrl.addToSvg(model)">
+                                 Добавить на фото
+                             </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </slick>
+    </div>
+</div>

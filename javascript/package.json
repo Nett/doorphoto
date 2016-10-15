@@ -1,0 +1,30 @@
+{
+  "name": "doorphoto",
+  "version": "1.0.0",
+  "description": "Extension for Door Catalog plugin",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Oleg Malii",
+  "dependencies": {
+    "angular": "^1.5.7",
+    "d3": "^4.2.2",
+    "imports-loader": "^0.6.5",
+    "jquery": "^3.1.0",
+    "webpack": "^1.13.2"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "babel": "^6.5.2",
+    "babel-core": "^6.10.4",
+    "babel-loader": "^6.2.4",
+    "babel-preset-es2015": "^6.9.0",
+    "clean-webpack-plugin": "^0.1.9",
+    "css-loader": "^0.23.1",
+    "html-loader": "^0.4.3",
+    "ng-annotate-webpack-plugin": "^0.1.3",
+    "ngtemplate-loader": "^1.3.1",
+    "style-loader": "^0.13.1"
+  }
+}

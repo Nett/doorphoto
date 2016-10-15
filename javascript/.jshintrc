@@ -1,0 +1,20 @@
+{
+  "jshint freeze":true,
+  "esnext": true,
+  "strict":true,
+  "camelcase":true,
+  "node":true,
+  "noempty":true,
+  "noarg":true,
+  "unused":true,
+  "eqeqeq":true,
+  "esnext":true,
+  "browser":true,
+  "bitwise":true,
+  "curly":true,
+  "undef":true,
+  "validthis":true,
+  "nonew":true,
+  "forin":true,
+  "quotmark": "single"
+}
