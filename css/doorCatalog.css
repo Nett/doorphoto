@@ -8,7 +8,7 @@ ul#catalogItemList, ul#catalogItemListMenu {
 }
 
 ul#catalogItemList.noFixedWidth, ul#catalogItemListMenu.noFixedWidth { /*NEED CORRECTION  - MESS INSIDE*/
-    width: 445px;
+    /*width: 445px;*/
     overflow: hidden;
 }
 
@@ -20,7 +20,7 @@ ul#catalogItemList li, ul#catalogItemListMenu li {
 ul#catalogItemList li p, ul#catalogItemListMenu li p {
     /*border-left: 2px solid #444444;*/
     text-align: left;
-    font-size: 18px;
+    /*font-size: 18px;*/
     padding-left: 5px;
     margin: 4px 0;
 }
@@ -218,10 +218,10 @@ div.catalogItemList .boxgrid {
     /*width: 125px;
     height: 225px;*/
     /*margin:10px;*/
-    background:transparent;  
-    border: none;  
-    overflow: hidden;  
-    position: relative;  
+    background:transparent;
+    border: none;
+    overflow: hidden;
+    position: relative;
 }
 
 div.catalogItemList .boxcaption {
@@ -234,31 +234,31 @@ div.catalogItemList .boxcaptionZoom {
 }
 
 div.catalogItemList .boxcaption {
-    float: left;  
-    position: absolute;  
+    float: left;
+    position: absolute;
     background-color:#E4E4E4;
-    height: 50px;  
+    height: 50px;
     width: 125px;
     opacity: .7;
-    /* For IE 5-7 */  
-    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);  
-    /* For IE 8 */  
-    -MS-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";  
+    /* For IE 5-7 */
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);
+    /* For IE 8 */
+    -MS-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
     border-top: 1px solid black;
     border-bottom: 1px solid black;
 }
 
 div.catalogItemList .boxcaptionZoom {
-    float: left;  
+    float: left;
     position: absolute;
     background-color:#E4E4E4;
-    height: 50px;  
-    width: 125px;  
-    opacity: .7;  
-    /* For IE 5-7 */  
-    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);  
-    /* For IE 8 */  
-    -MS-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";  
+    height: 50px;
+    width: 125px;
+    opacity: .7;
+    /* For IE 5-7 */
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);
+    /* For IE 8 */
+    -MS-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
     /*border-bottom: 1px solid black;*/
 }
 
@@ -272,6 +272,7 @@ div.catalogItemList span.roomModel {
     height: 50px;
     width: 125px;
     cursor: pointer;
+    line-height: 1.3;
 }
 
 div.catalogItemList span.roomModel:hover {
